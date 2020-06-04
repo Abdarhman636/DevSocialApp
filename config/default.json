@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://socialapp:socialapp@socialapp-ecdks.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "myJWTsecret"
+}
