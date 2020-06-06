@@ -132,7 +132,7 @@ export const addPost = formDate => async dispatch => {
 }
 
 // add comment 
-export const addCommentt = (postId, formDate) => async dispatch => {
+export const addComment = (postId, formDate) => async dispatch => {
 
    const config = {
       headers: {
@@ -159,7 +159,7 @@ export const addCommentt = (postId, formDate) => async dispatch => {
 }
 
 // delete comment 
-export const deleteCommentt = (postId, commentId) => async dispatch => {
+export const deleteComment = (postId, commentId) => async dispatch => {
 
    try {
       const res = await axios.delete(`/api/posts/comment/${postId}/${commentId}`)

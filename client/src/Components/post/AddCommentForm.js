@@ -1,25 +1,26 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { addPost } from '../../actions/post'
+import { addComment } from '../../actions/post'
 
-export const PostForm = ({ addPost }) => {
+export const AddCommentForm = ({ postid, addComment }) => {
 
    const [text, setText] = useState('')
+
+   const formSubmit = e => {
+      addComment(postid, { text })
+      setText('')
+   }
    return (
       <div className="post-form">
          <div className="bg-primary p">
-            <h3>Say Something...</h3>
+            <h3>Leave A Comment</h3>
          </div>
-         <form className="form my-1" onSubmit={e => {
-            e.preventDefault()
-            addPost({ text })
-            setText('')
-         }}>
+         <form className="form my-1" onSubmit={formSubmit}>
             <textarea
                name="text"
                cols="30"
                rows="5"
-               placeholder="Create a post"
+               placeholder="Comment on this post"
                value={text}
                onChange={e => setText(e.target.value)}
                required
@@ -30,4 +31,4 @@ export const PostForm = ({ addPost }) => {
    )
 }
 
-export default connect(null, { addPost })(PostForm)
+export default connect(null, { addComment })(AddCommentForm)

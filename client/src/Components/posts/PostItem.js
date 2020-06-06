@@ -33,7 +33,6 @@ export const PostItem = ({ addLike, removeLike, deletePost, auth, post: { _id, t
                      Discussion {comment.length > 0 && (<span class='comment-count'>{comment.length}</span>)}
                   </Link>
                   {/* compare the post user and the login user */}
-                  {console.log(auth.user, user)}
                   {!auth.loading && user === auth.user._id && (
                      <button onClick={e => deletePost(_id)} type="button" class="btn btn-danger">
                         <i class="fas fa-times"></i>
